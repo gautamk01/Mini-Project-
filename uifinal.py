@@ -60,11 +60,45 @@ def create_dropdowns():
                 final = disease[a]
         st.success(
             f'{"Your cow is likely to have a "}{final.replace("_", " ")}')
+        expander = st.expander("Remedy ")
+        expander.write(remedy(final))
 
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
         return json.load(f)
+
+
+def remedy(disease):
+    remedies = {
+        'mastitis': 'Isolate the infected cow, use appropriate antibiotics, and maintain proper hygiene during milking.',
+        'blackleg': 'Vaccinate cattle against blackleg, and provide prompt treatment with antibiotics if symptoms occur.',
+        'bloat': 'Introduce anti-bloat medications, provide access to fresh water, and ensure proper grazing management.',
+        'coccidiosis': 'Administer coccidiostats, maintain clean living conditions, and provide proper nutrition.',
+        'cryptosporidiosis': 'Implement strict hygiene practices, provide supportive care, and administer appropriate medications.',
+        'displaced_abomasum': 'Consult with a veterinarian for proper diagnosis and treatment, which may include surgery.',
+        'gut_worms': 'Administer anthelmintic medications and practice good pasture management.',
+        'listeriosis': 'Use antibiotics for treatment, improve hygiene, and provide proper nutrition.',
+        'liver_fluke': 'Implement measures to control snail intermediate hosts and use anthelmintic medications.',
+        'necrotic_enteritis': 'Administer antibiotics and improve overall flock management and hygiene.',
+        'peri_weaning_diarrhoea': 'Implement proper nutrition, hygiene, and consider antibiotic treatment.',
+        'rift_valley_fever': 'Vaccinate animals, practice vector control, and ensure proper hygiene.',
+        'rumen_acidosis': 'Adjust the diet to prevent acidosis, provide access to clean water, and use buffers.',
+        'traumatic_reticulitis': 'Consult with a veterinarian for proper diagnosis and treatment, which may include surgery.',
+        'calf_diphtheria': 'Administer antibiotics, provide supportive care, and improve living conditions.',
+        'foot_rot': 'Implement proper foot hygiene, provide hoof care, and use appropriate medications.',
+        'foot_and_mouth': 'Quarantine affected animals, practice strict biosecurity, and consider vaccination.',
+        'ragwort_poisoning': 'Remove ragwort plants from pastures, and provide supportive care to affected animals.',
+        'wooden_tongue': 'Administer antibiotics, provide soft and easily chewable feed, and improve oral hygiene.',
+        'infectious_bovine_rhinotracheitis': 'Vaccinate against IBR, isolate affected animals, and provide supportive care.',
+        'acetonaemia': 'Adjust the diet, provide proper nutrition, and consult with a veterinarian for treatment.',
+        'fatty_liver_syndrome': 'Improve diet and nutrition, provide proper care, and consult with a veterinarian for treatment.',
+        'calf_pneumonia': 'Vaccinate against respiratory pathogens, provide proper ventilation, and administer antibiotics.',
+        'schmallen_berg_virus': 'Vaccinate against SBV, practice vector control, and provide supportive care.',
+        'trypanosomosis': 'Use trypanocidal medications, control vectors, and provide supportive care.',
+        'fog_fever': 'Implement preventive measures, provide supportive care, and consult with a veterinarian for treatment.',
+    }
+    return f'As a basic remedy for {disease} we recommend to {remedies[disease]}'
 
 
 def abnormality_prediction(input_data):
