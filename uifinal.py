@@ -26,7 +26,7 @@ options = ['anorexia', 'abdominal_pain', 'anaemia', 'abortions', 'acetone', 'agg
            'ulcers', 'vomiting', 'weight_loss', 'weakness']
 disease = ['mastitis', 'blackleg', 'bloat', 'coccidiosis', 'cryptosporidiosis',
            'displaced_abomasum', 'gut_worms', 'listeriosis', 'liver_fluke', 'necrotic_enteritis', 'peri_weaning_diarrhoea',
-           ' rift_valley_fever', 'rumen_acidosis',
+           'rift_valley_fever', 'rumen_acidosis',
            'traumatic_reticulitis', 'calf_diphtheria', 'foot_rot', 'foot_and_mouth', 'ragwort_poisoning', 'wooden_tongue', 'infectious_bovine_rhinotracheitis',
            'acetonaemia', 'fatty_liver_syndrome', 'calf_pneumonia', 'schmallen_berg_virus', 'trypanosomosis', 'fog_fever']
 
@@ -266,7 +266,7 @@ def main():
         walking_capacity = st.text_input(
             'Walking Capacity', placeholder="in Steps", key='walking_capacity')
         sleeping_duration = st.text_input(
-            'Sleep Duration', placeholder="in Hurs", key='sleeping_duration')
+            'Sleep Duration', placeholder="in Hours", key='sleeping_duration')
 
     with col2:
         body_condition_score = st.text_input(
