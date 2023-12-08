@@ -147,6 +147,8 @@ def main():
     with col1:
         st.title("Cow:blue[Care]")
         st.text("An Abnormality Detection System :Using Machine learning Model")
+        st.caption(
+            "CowCare can make mistakes. Consider checking important information.")
 
 # Put the animation in the second column
     with col2:
